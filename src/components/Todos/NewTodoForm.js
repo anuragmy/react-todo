@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 // import { useDispatch } from 'redux';
-import { addTodo } from '../../action';
+import { addTodos } from '../../thunk';
 
 import './NewTodoForm.css';
 
@@ -36,7 +36,7 @@ const NewTodoForm = ({ todos = [], add }) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  add: text => dispatch(addTodo(text))
+  add: text => dispatch(addTodos(text))
 });
 
 const mapStateToProps = state => ({
